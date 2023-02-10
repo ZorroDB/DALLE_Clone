@@ -1,18 +1,27 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-
+import { Cursor } from 'react-creative-cursor';
+import 'react-creative-cursor/dist/styles.css';
 
 //Importeerd the benodigde modules
 
 import { logo } from './assets';
-import { Home, CreatePost } from './page';
+import { Home, CreatePost, Aboutus } from './page';
 
 
 //Het linken van de SVG (logo) en andere pagina's met deze app.
 
+const index = () =>{
+  return (
+    <>
+      <Cursor isGelly={true} />
+    </>
+  );
+}
+
 
 //Component die de header en navigation van de app rendered
-const App = () => (
+const App = () => (  
   
   <BrowserRouter>
     <header className="w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
@@ -22,7 +31,7 @@ const App = () => (
       
       <div className="flex">
         <Link to="/create-post" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md mr-4">Create</Link>
-        {/* <Link to="/AboutUs" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">About Us</Link> */}
+        <Link to="/AboutUs" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">About Us</Link>
       </div>
     </header>
  
@@ -36,6 +45,7 @@ const App = () => (
         <Route path="/" element={<Home />} />
         {/* create-post pagina */}
         <Route path="/create-post" element={<CreatePost />} />
+        <Route path='/Aboutus' element={<Aboutus />} />
       </Routes>
     </main>
   </BrowserRouter>

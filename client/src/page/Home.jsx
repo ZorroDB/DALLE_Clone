@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Card, FormField, Loader } from '../components';
 
 const RenderCards = ({ data, title }) => {
@@ -61,6 +60,13 @@ const Home = () => {
   };
 
   return (
+
+   
+
+
+
+
+
     <section className="max-w-7xl mx-auto">
       <div>
         <h1 className="font-extrabold text-[#222328] text-[32px]">Showcase your art!</h1>

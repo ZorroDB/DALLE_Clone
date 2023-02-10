@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import JSConfetti from 'js-confetti'
 import { preview } from '../assets';
 import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
 
-const Modal = ({ isOpen, closeModal, message, navigate }) => {
- const [showModal, setShowModal] = useState(isOpen);
-}
-
-
-
 const CreatePost = () => {
   const navigate = useNavigate();
+  const jsConfetti = new JSConfetti()
 
   //Dit is de form in create-post pagina
   const [form, setForm] = useState({
@@ -24,6 +20,8 @@ const CreatePost = () => {
 
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showEmoji, setShowEmoji] = useState(false);
+
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -77,13 +75,13 @@ const CreatePost = () => {
         });
 
         await response.json();
-
-        
-
-        if(!showModal)
-        {
-          return null;
-        }
+        jsConfetti.addConfetti(
+          {
+            emojis:['🎉'],
+            emojiSize: 100,
+            confettiNumber: 130
+          }
+        )
         navigate('/');
       } catch (err) {
         alert(err);
@@ -96,6 +94,7 @@ const CreatePost = () => {
   };
 
   return (
+    
     <section className="max-w-7xl mx-auto">
       <div>
         <h1 className="font-extrabold text-[#222328] text-[32px]">Create your own creative image!</h1>
@@ -167,7 +166,9 @@ const CreatePost = () => {
           </button>
         </div>
       </form>
+      
     </section>
+    
   );
 };
 
