@@ -6,6 +6,8 @@
     font-family: 'Inter', sans-serif;
 }
 
+
+/* Dit is een media query voor wanneer het scherm meer dan 480 pixels is zal de 7e kaart en telkens erna 2 in nemen */
 @media screen and (min-width: 480px) {
     .card:nth-child(7n + 1) {
         grid-column: auto/span 2;
@@ -13,10 +15,12 @@
     }
 }
 
+/* prompt scrollbar zal width hebben van 5 pixels en de border-radius + background kleur */
 .prompt::-webkit-scrollbar {
     width: 5px;
 }
  
+
 .prompt::-webkit-scrollbar-thumb {
   background-color: #666e75;
   border-radius: 5px;
