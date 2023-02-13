@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import { Cursor } from 'react-creative-cursor';
-import 'react-creative-cursor/dist/styles.css';
 
 //Importeerd the benodigde modules
 
@@ -10,14 +8,6 @@ import { Home, CreatePost, Aboutus } from './page';
 
 
 //Het linken van de SVG (logo) en andere pagina's met deze app.
-
-const index = () =>{
-  return (
-    <>
-      <Cursor isGelly={true} />
-    </>
-  );
-}
 
 
 //Component die de header en navigation van de app rendered
