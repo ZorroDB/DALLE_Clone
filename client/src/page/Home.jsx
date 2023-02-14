@@ -112,6 +112,9 @@ const Home = () => {
           </>
         )}
       </div>
+      <div className='footer'>
+  <p>Created by Diego</p>
+</div>
     </section>
   );
 };

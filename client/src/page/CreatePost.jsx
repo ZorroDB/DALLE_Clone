@@ -164,12 +164,16 @@ const CreatePost = () => {
           >
             {loading ? 'Sharing...' : 'Share with the Community'}
           </button>
+          
         </div>
       </form>
-      
+      <div className='footer'>
+  <p>Created by Diego</p>
+</div>
     </section>
     
   );
+ 
 };
 
 export default CreatePost;
